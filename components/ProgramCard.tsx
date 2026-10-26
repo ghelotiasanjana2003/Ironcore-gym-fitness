@@ -1,0 +1,5 @@
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+export default function ProgramCard({ title, text, image, level = "All levels", duration = "45–60 min" }: { title: string; text: string; image: string; level?: string; duration?: string }) {
+  return <article className="group hover-lift overflow-hidden rounded-md bg-white text-[#17181d]"><div className="image-cover relative h-48 transition duration-500 group-hover:scale-[1.02]" style={{backgroundImage:`linear-gradient(0deg,rgba(0,0,0,.15),transparent),url('${image}')`}}><span className="absolute bottom-4 left-4 bg-[#d7193f] px-3 py-1 text-xs font-bold uppercase text-white">{level}</span></div><div className="p-5"><div className="mb-2 flex items-start justify-between gap-3"><h3 className="text-[17px] font-black uppercase">{title}</h3><span className="whitespace-nowrap text-xs text-gray-500">{duration}</span></div><p className="text-[13px] leading-6 text-gray-600">{text}</p><Link href="/try-us" className="mt-5 inline-flex items-center gap-2 text-sm font-extrabold uppercase text-[#d7193f]">Explore program <ArrowUpRight size={16}/></Link></div></article>;
+}
